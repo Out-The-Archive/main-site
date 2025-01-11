@@ -9,14 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "mongodb": "^6.11.0",
-    "next": "15.0.3",
-    "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106"
+    "@lucia-auth/adapter-mongodb": "^1.0.3",
+    "@oslojs/crypto": "^1.0.1",
+    "@oslojs/encoding": "^1.1.0",
+    "dotenv": "^16.4.7",
+    "lucia": "^3.2.2",
+    "lucia-auth": "^1.8.0",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.3",
+    "next": "^15.1.3",
+    "oslo": "^1.2.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.9.1",
-    "@types/react": "^18.3.12",
+    "@types/react": "^19.0.2",
     "@types/react-dom": "^18.3.1",
     "eslint": "^9.15.0",
     "eslint-config-next": "15.0.3",
