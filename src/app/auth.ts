@@ -13,7 +13,7 @@ export async function dbConnect() {
 
 const db = client.db();
 const sessions: Collection<Session> = db.collection("sessions");
-const users: Collection<User> = db.collection("users");
+export const users: Collection<User> = db.collection("users");
 
 export function generateSessionToken(): string {
 	const bytes = new Uint8Array(20);
