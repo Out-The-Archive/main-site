@@ -5,9 +5,9 @@ import { useState } from "react";
 export default function Home() {
   const [bgColor, setBgColor] = useState("white");
 
-  const handleClick = (color: string) => {
-    setBgColor(color);
-  };
+  // const handleClick = (color: string) => {
+  //   setBgColor(color);
+  // };
 
   return (
     <>
@@ -37,13 +37,13 @@ export default function Home() {
           width: "200px",
           height: "200px",
           border: "1px solid #ccc",
-        }}
+        }} //blue is i wnat javascipt, yrllow (i want an object)
       >
         Box with color: {bgColor}
       </div>
       <div style={{ display: "flex", justifyContent: "center", gap: "1rem" }}>
         <button
-          onClick={() => handleClick("red")}
+          onClick={() => setBgColor("red")}
           style={{
             padding: "0.5rem 1rem",
             backgroundColor: "red",
@@ -55,7 +55,7 @@ export default function Home() {
           Red
         </button>
         <button
-          onClick={() => handleClick("green")}
+          onClick={() => setBgColor("green")}
           style={{
             padding: "0.5rem 1rem",
             backgroundColor: "green",
@@ -67,7 +67,7 @@ export default function Home() {
           Green
         </button>
         <button
-          onClick={() => handleClick("blue")}
+          onClick={() => setBgColor("blue")}
           style={{
             padding: "0.5rem 1rem",
             backgroundColor: "blue",
