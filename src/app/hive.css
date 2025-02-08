@@ -1,0 +1,60 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root{
+    --blue: #99bbd3;
+    --orange: #df4631;
+    --green: #449e5b;
+
+    --blue-light: #aebcc2;
+    --orange-light: #d79675;
+    --green-light: #92b38e;
+}
+
+.hive-card{
+   
+}
+
+.ellipse{
+    width: 105px;
+    height: 105px;
+    flex-shrink: 0;
+    border-radius: 50%;
+
+    padding-top: 11px;
+
+    background: linear-gradient(180deg, #EBE3D4 47.5%, #AEBCC2 100%);
+}
+
+.rectangle{
+    width: 105px;
+    height: 87px;
+    flex-shrink: 0;
+
+    margin-top: -72px;
+    border-radius: 15px;
+    background: linear-gradient(180deg, #EBE3D4 0%, #AEBCC2 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    z-index: 100;
+}
+
+.card-icon{
+    width: 100%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+
+    padding-top: 2px;
+    padding-left: 7.61px;
+}
+
+.hive-card-text{
+    margin-top: 7.01px;
+    color: #000;
+    font-family: "DM Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+}
