@@ -8,7 +8,7 @@ export default function MobileMenu() {
     return (
         <nav className="relative p-4 bg-white shadow-md">
             <div className="flex justify-between items-center max-w-6xl mx-auto mt-6">
-                <img src="/images/Logo.png" alt="Logo" className="h-10" />
+                <img src="/icons/logo.svg" alt="OTA logo" className="h-10" />
                 <button
                     className="md:hidden p-2 rounded-md outline-none focus:outline-none focus:ring-0"
                     onClick={() => setIsOpen(!isOpen)}
