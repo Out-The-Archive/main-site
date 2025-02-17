@@ -1,35 +1,40 @@
-import Image from 'next/image';
+"use client";
 
 type BuzzlightProps = {
-    imageSrc: string;
-    hoverSrc: string;
+    videoSrc: string;
     alt: string;
-  };
+};
 
-  const Buzzlight: React.FC<BuzzlightProps> = ({ imageSrc, hoverSrc, alt }) => {
-  return (
-    <div className="group relative w-40 h-40 overflow-hidden">
-      {/* Base Image */}
-      <Image 
-        src={imageSrc} 
-        alt={alt} 
-        fill
-        className="object-cover transition-transform duration-300 group-hover:scale-105"
-        style={{ clipPath: "polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)" }}
-      />
-
-      {/* Hover Layer */}
-      <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-300" style={{ clipPath: "polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)" }}>
-        <Image 
-          src={hoverSrc} 
-          alt={alt} 
-          fill
-          className="object-cover"
-          style={{ clipPath: "polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)" }}
-        />
-      </div>
-    </div>
-  );
+export default function BuzzlightComponent({ videoSrc, alt }: BuzzlightProps) {
+    return (
+        <div
+            className="flex-none group h-40 w-44 relative overflow-hidden bg-red-600"
+            style={{
+                WebkitMaskImage: 'url("/hexagon.svg")',
+                maskImage: 'url("/hexagon.svg")',
+                WebkitMaskRepeat: "no-repeat",
+                maskRepeat: "no-repeat",
+            }}
+            onMouseEnter={(e) => {
+                const video = e.currentTarget.querySelector("video");
+                if (video) video.play();
+            }}
+            onMouseLeave={(e) => {
+                const video = e.currentTarget.querySelector("video");
+                if (video) video.pause();
+            }}
+        >
+            <video
+                src={videoSrc}
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+            {/* Hover Overlay */}
+            <div className="absolute grid place-items-center inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                <p className="text-white">JOLLIBEE</p>
+            </div>
+        </div>
+    );
 }
-
-export default Buzzlight;
