@@ -33,7 +33,7 @@ export default function MobileMenu() {
             </div>
 
             <div
-                className={`absolute top-full left-0 w-full bg-white transition-all duration-300 ease-in-out ${
+                className={`absolute z-50 top-full left-0 w-full bg-white transition-all duration-300 ease-in-out ${
                     isOpen ? "translate-x-0" : "-translate-x-full"
                 } md:hidden`}
             >
