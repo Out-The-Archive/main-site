@@ -6,9 +6,24 @@ export default function MobileMenu() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="relative p-4 bg-white shadow-md">
-            <div className="flex justify-between items-center max-w-6xl mx-auto mt-6">
+        <nav className="relative p-4 bg-white">
+            <div className="flex justify-between items-center max-w-6xl mx-auto">
                 <img src="/icons/logo.svg" alt="OTA logo" className="h-10" />
+
+                <ul className="hidden md:flex gap-6">
+                    <li>
+                        <a href="#">about</a>
+                    </li>
+                    <li>
+                        <a href="#">join</a>
+                    </li>
+                    <li>
+                        <a href="#">community</a>
+                    </li>
+                    <li>
+                        <a href="#">log in</a>
+                    </li>
+                </ul>
                 <button
                     className="md:hidden p-2 rounded-md outline-none focus:outline-none focus:ring-0"
                     onClick={() => setIsOpen(!isOpen)}
@@ -18,7 +33,7 @@ export default function MobileMenu() {
             </div>
 
             <div
-                className={`absolute top-full left-0 w-full bg-white transition-all duration-300 ease-in-out ${
+                className={`absolute z-50 top-full left-0 w-full bg-white transition-all duration-300 ease-in-out ${
                     isOpen ? "translate-x-0" : "-translate-x-full"
                 } md:hidden`}
             >
