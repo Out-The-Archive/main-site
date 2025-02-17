@@ -1,27 +1,47 @@
 "use client";
 
 import * as motion from "motion/react-client";
+import Image from "next/image";
 
-export default function Swipeable() {
+type SwipeableProps = {
+    image: string;
+    alt: string;
+    width: number;
+    height: number;
+    top?: string;
+    left?: string;
+};
+
+export default function Swipeable({
+    image,
+    alt,
+    width,
+    height,
+    top,
+    left,
+}: SwipeableProps) {
     return (
         <motion.div
             drag
-            style={box}
             dragElastic={1}
             dragTransition={{
-                power: 0.1, // Lower power reduces the initial velocity
+                power: 0.1,
             }}
-        />
+            className="inline-block absolute hover:cursor-pointer"
+            style={{
+                width: width,
+                height: height,
+                top: top ?? "",
+                left: left ?? "",
+            }}
+        >
+            <Image
+                src={image}
+                alt={alt}
+                width={width}
+                height={height}
+                draggable={false}
+            />
+        </motion.div>
     );
 }
-
-/**
- * ==============   Styles   ================
- */
-
-const box = {
-    width: 100,
-    height: 100,
-    backgroundColor: "#dd00ee",
-    borderRadius: 10,
-};
