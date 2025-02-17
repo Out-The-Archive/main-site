@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     description: "Out The Archive Main Site",
 };
 
+import MobileMenu from "./components/menu";
 import Footer from "./components/Footer/Footer";
 
 export default function RootLayout({
@@ -30,6 +31,7 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
+                <MobileMenu />
                 {children}
                 <Footer />
             </body>
