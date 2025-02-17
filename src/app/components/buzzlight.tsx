@@ -2,13 +2,12 @@
 
 type BuzzlightProps = {
     videoSrc: string;
-    alt: string;
 };
 
-export default function BuzzlightComponent({ videoSrc, alt }: BuzzlightProps) {
+export default function BuzzlightComponent({ videoSrc }: BuzzlightProps) {
     return (
         <div
-            className="flex-none group h-40 w-44 relative overflow-hidden bg-red-600"
+            className="flex-none group h-40 w-44 relative overflow-hidden"
             style={{
                 WebkitMaskImage: 'url("/hexagon.svg")',
                 maskImage: 'url("/hexagon.svg")',
