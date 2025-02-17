@@ -14,7 +14,7 @@ export default function Footer() {
                         height={18}
                         className="relative bottom-0 group-hover:opacity-0"
                     />
-                    <a href="" className="underline">
+                    <a href="mailto:ota@ucsd.edu" className="underline">
                         outthearchive@gmail.com
                     </a>
                 </span>
@@ -26,7 +26,10 @@ export default function Footer() {
                         height={18}
                         className="relative bottom-0 group-hover:opacity-0"
                     />
-                    <a href="" className="underline">
+                    <a
+                        href="https://www.instagram.com/otaucsd/"
+                        className="underline"
+                    >
                         @otaucsd
                     </a>
                 </span>
