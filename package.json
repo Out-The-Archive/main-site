@@ -15,6 +15,7 @@
     "dotenv": "^16.4.7",
     "lucia": "^3.2.2",
     "lucia-auth": "^1.8.0",
+    "lucide-react": "^0.474.0",
     "mongodb": "^6.12.0",
     "mongoose": "^8.9.3",
     "next": "^15.1.3",
