@@ -1,3 +1,9 @@
+import Buzzlight from "./sections/Buzzlight";
+
 export default async function Home() {
-    return <div></div>;
+    return (
+        <main>
+            <Buzzlight />
+        </main>
+    );
 }
