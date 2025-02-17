@@ -5,7 +5,7 @@ export default function Landing() {
         <div>
             <div className="overflow-hidde relative h-[30rem]">
                 <Swipeable
-                    image="/record-player.png"
+                    image="/landing/record-player.png"
                     alt=""
                     width={216}
                     height={174}
@@ -13,7 +13,7 @@ export default function Landing() {
                     left="10%"
                 />
                 <Swipeable
-                    image="/folder.png"
+                    image="/landing/folder.png"
                     alt=""
                     width={180}
                     height={80}
@@ -21,7 +21,7 @@ export default function Landing() {
                     left="calc(10% + 11rem)"
                 />
                 <Swipeable
-                    image="/Paper-clips.png"
+                    image="/landing/Paper-clips.png"
                     alt=""
                     width={250}
                     height={95}
@@ -29,7 +29,7 @@ export default function Landing() {
                     left="calc(10% + 4rem)"
                 />
                 <Swipeable
-                    image="/Envelope.png"
+                    image="/landing/Envelope.png"
                     alt=""
                     width={180}
                     height={95}
@@ -37,7 +37,7 @@ export default function Landing() {
                     left="calc(10% + 4rem)"
                 />
                 <Swipeable
-                    image="/Casset.png"
+                    image="/landing/Casset.png"
                     alt=""
                     width={140}
                     height={55}
@@ -45,7 +45,7 @@ export default function Landing() {
                     left="10%"
                 />
                 <Swipeable
-                    image="/Postcard.png"
+                    image="/landing/Postcard.png"
                     alt=""
                     width={180}
                     height={95}
@@ -53,7 +53,7 @@ export default function Landing() {
                     left="calc(10% + 10rem)"
                 />
                 <Swipeable
-                    image="/Polaroids.png"
+                    image="/landing/Polaroids.png"
                     alt=""
                     width={170}
                     height={95}
