@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Footer() {
     return (
         <footer className="bg-[#FFF8F2] relative">
-            <div className="flex flex-col ms-5 mb-7">
+            <div className="font-dmSans flex flex-col ms-5 mb-7">
                 <span className="flex gap-4">
                     <Image
                         src="/icons/mail.svg"
@@ -34,7 +34,7 @@ export default function Footer() {
                     </a>
                 </span>
             </div>
-            <h3 className="ms-2 text-8xl capitalize">
+            <h3 className="font-larken font-bold italic ms-2 text-8xl capitalize">
                 out <br className="md:hidden" />
                 the <br className="md:hidden" />
                 archive

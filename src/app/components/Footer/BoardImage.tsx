@@ -6,14 +6,14 @@ type BoardImageProps = {
 
 export default function BoardImage({ member }: BoardImageProps) {
     return (
-        <div className="relative group overflow-hidden">
+        <div className="relative flex items-end group overflow-hidden">
             <Image
                 src={`/footer/standing/${member}.png`}
                 alt={`${member} standing`}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                width={1200}
+                width={185}
                 height={600}
-                className="relative bottom-0 group-hover:opacity-0"
+                className="relative object-bottom bottom-0 group-hover:opacity-0"
             />
             <Image
                 src={`/footer/jumping/${member}.png`}
