@@ -3,7 +3,7 @@ import Swipeable from "../components/Swipeable";
 export default function Landing() {
     return (
         <div>
-            <div className="overflow-hidde relative h-[30rem]">
+            <div className="overflow-hidden relative h-[30rem]">
                 <Swipeable
                     image="/landing/record-player.png"
                     alt=""
