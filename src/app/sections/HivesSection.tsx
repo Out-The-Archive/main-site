@@ -17,6 +17,7 @@ export default function HivesSection() {
                 {hiveContent.map((hive, _index) => (
                     <AccordionItem
                         value={`item-${_index}`}
+                        key={`item-${_index}`}
                         className="rounded-lg mx-4"
                     >
                         <AccordionTrigger
