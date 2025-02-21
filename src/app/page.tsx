@@ -1,5 +1,5 @@
-import Buzzlight from "./sections/Buzzlight";
+import UpcomingEvents from "./sections/UpcomingEvents";
 
 export default function Home() {
-    return <Buzzlight />;
+    return <UpcomingEvents />;
 }
