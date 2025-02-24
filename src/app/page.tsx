@@ -2,7 +2,7 @@ import Landing from "./sections/Landing";
 
 export default function Home() {
     return (
-        <div>
+        <div className="">
             <Landing />
         </div>
     );
