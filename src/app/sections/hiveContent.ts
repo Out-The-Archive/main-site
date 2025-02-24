@@ -1,6 +1,6 @@
 export default [
     {
-        hive: "desgin",
+        hive: "design",
         content:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, sequi expedita. Quisquam, dolorem ea illo odit, architecto suscipit quos maiores quam quibusdam praesentium repellat sed sapiente qui laboriosam eius quasi.",
         icon: "/hives/design-icon.svg",
@@ -24,6 +24,6 @@ export default [
         icon: "/hives/music-icon.svg",
         pin: "/hives/detail-pin-music.png",
         gradientStart: "#EBE3D4",
-        gradientEnd: "green",
+        gradientEnd: "#92B38E",
     },
 ];
