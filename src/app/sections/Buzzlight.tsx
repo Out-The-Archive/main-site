@@ -2,8 +2,8 @@ import BuzzlightComponent from "../components/buzzlight";
 
 export default function Buzzlight() {
     return (
-        <section>
-            <h3>buzzlights</h3>
+        <section> 
+            <h3 className="font-aileron text-[38px] font-bold italic pl-[24px]">buzzlights</h3>
             <div className="flex flex-col overflow-x-scroll">
                 <div className="flex gap-28 ms-72">
                     <BuzzlightComponent videoSrc="/jollibee.mp4" />
