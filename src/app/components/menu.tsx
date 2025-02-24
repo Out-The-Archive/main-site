@@ -12,29 +12,28 @@ export default function MobileMenu() {
         } else {
             document.body.style.overflow = "auto";
         }
-    
+
         return () => {
             document.body.style.overflow = "auto";
         };
     }, [isOpen]);
-
 
     return (
         <nav className="sticky top-0 z-50 p-4 bg-white ">
             <div className="flex justify-between items-center max-w-6xl mx-auto">
                 <img src="/icons/logo.svg" alt="OTA logo" className="h-10" />
 
-                <ul className="hidden md:flex gap-6">
-                    <li>
+                <ul className="hidden md:flex gap-6 font-larken">
+                    <li className="hover:underline">
                         <a href="#">about</a>
                     </li>
-                    <li>
+                    <li className="hover:underline">
                         <a href="#">join</a>
                     </li>
-                    <li>
+                    <li className="hover:underline">
                         <a href="#">community</a>
                     </li>
-                    <li>
+                    <li className="hover:underline text-[#DF6431]">
                         <a href="#">log in</a>
                     </li>
                 </ul>
@@ -47,10 +46,10 @@ export default function MobileMenu() {
             </div>
 
             <div
-                className={`fixed z-50 left-0 h-screen w-full bg-white flex flex-col justify-between transition-all duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"
-                    } md:hidden`}
+                className={`fixed z-50 left-0 h-screen w-full bg-white flex flex-col justify-between transition-all duration-300 ease-in-out ${
+                    isOpen ? "translate-x-0" : "-translate-x-full"
+                } md:hidden`}
             >
-
                 <ul className="flex flex-col items-center space-y-4 p-4">
                     <li className="w-3/4">
                         <a
@@ -85,10 +84,11 @@ export default function MobileMenu() {
                     >
                         log in
                     </a>
-                    <div className="flex flex-col items-center p-2 text-xs font-aileron font-extralight">Out The Archive * 2025</div>
+                    <div className="flex flex-col items-center p-2 text-xs font-aileron font-extralight">
+                        Out The Archive * 2025
+                    </div>
                 </div>
             </div>
-
         </nav>
     );
 }
