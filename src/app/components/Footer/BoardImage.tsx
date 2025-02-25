@@ -1,27 +1,32 @@
 import Image from "next/image";
 
-type BoardImageProps = {
-    member: string;
+export type BoardImageProps = {
+    name: string;
+    jumpingScale: number;
+    jumpHeight?: number;
 };
 
-export default function BoardImage({ member }: BoardImageProps) {
+export default function BoardImage({
+    name,
+    jumpingScale,
+    jumpHeight,
+}: BoardImageProps) {
     return (
-        <div className="relative group overflow-hidden">
-            <Image
-                src={`/footer/standing/${member}.png`}
-                alt={`${member} standing`}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                width={1200}
-                height={600}
-                className="relative bottom-0 group-hover:opacity-0"
+        <div className="relative group">
+            <img
+                src={`/footer/standing/${name}.png`}
+                alt={`${name} standing`}
+                className="relative object-bottom bottom-0 group-hover:opacity-0 md:max-h-64 lg:max-h-96 "
             />
-            <Image
-                src={`/footer/jumping/${member}.png`}
-                alt={`${member} jumping`}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                width={1200}
-                height={600}
-                className="absolute inset-0 opacity-0 group-hover:opacity-100"
+            <img
+                src={`/footer/jumping/${name}.png`}
+                alt={`${name} jumping`}
+                className="absolute z-10 inset-0 w-full h-full object-contain object-top opacity-0 group-hover:opacity-100"
+                style={{
+                    transform: `scale(${jumpingScale}) translateY(${
+                        jumpHeight ?? 0
+                    }%)`,
+                }}
             />
         </div>
     );
