@@ -16,20 +16,24 @@ export default function HivesSection() {
     return (
         
         <section>
+
+            <div
+                className={`flex flex-col items-center justify-center w-full`}
+            >
             
             <h3
-            className={`flex ml-[2%] font-aileron italic text-[36px]`}
+            className={`flex left-0 self-start ml-[2%] font-aileron italic text-[36px]`}
             >
                 hives
             </h3>
-            <div className={`place-self-center max-w-fit flex flex-col justify-center px-4 `}>
+            <div className={`w-full max-w-full flex flex-col items-center justify-center px-4 mx-auto`}>
             <Accordion type="single" collapsible onValueChange={(value) => setOpenItem(value)}
             className={`w-full flex justify-center px-4 `}>
                 <div className={` flex flex-col items-center`}>
                 {hiveContent.map((hive, _index) => (
                     <AccordionItem
                         value={`item-${_index}`}
-                        className="place-self-center w-[350px] md:w-[426px] lg:w-[632px] m-1 mx-4 rounded-[17px] shadow-[4px 0px 4.623px 0px rgba(0, 0, 0, 0.25)]"
+                        className="w-[325px] md:w-[426px] lg:w-[632px] m-1 mx-auto rounded-[17px] shadow-[4px 0px 4.623px rgba(0, 0, 0, 0.25)]"
                     >
                         <AccordionTrigger
                             className={`relative rounded-t-[17px] 
@@ -85,18 +89,24 @@ export default function HivesSection() {
                 ))}
                 </div>
             </Accordion>
-            <div className={`flex flex-row md:flex-col w-[350px] md:w-[426px] lg:w-[632px] items-center md:items-end justify-between mt-[30px] font-larken font-light italic text-[18.5px] text-left md:text-right gap-2 md:gap-0`}>
-                <p className={`-ml-[12px] md:ml-[0] md:mr[200px] text-left`}>
+            
+            </div>
+
+            <div className={`flex flex-row lg:flex-col w-[325px] md:w-[426px] lg:w-[632px] items-center lg:items-end justify-between mt-[30px] font-larken font-light italic text-[18.5px] text-left lg:text-right gap-2 md:gap-0`}>
+                <p className={``}>
                     a new creative home <br /> for your buzzing passions.
                 </p>
                 <a
                     href=""
-                    className={`px-[17px] py-[9px] -mr-[73px] md:-mr[150px] rounded-[32px] bg-[#EEBCBEAB] font-larken italic font-light text-[22px] shadow-lg`}
+                    className={`lg:mt-[12px] px-[24px] py-[2px] rounded-[32px] bg-[#EEBCBEAB] font-larken italic font-light text-[22px] shadow-lg`}
                 >
                     join us
                 </a>
             </div>
+
             </div>
+
+            
         </section>
     );
 }
