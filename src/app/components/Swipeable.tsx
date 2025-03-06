@@ -10,6 +10,7 @@ type SwipeableProps = {
     height: number;
     top?: string;
     left?: string;
+    zindex?: number;
 };
 
 export default function Swipeable({
@@ -19,6 +20,7 @@ export default function Swipeable({
     height,
     top,
     left,
+    zindex
 }: SwipeableProps) {
     return (
         <motion.div
@@ -33,6 +35,7 @@ export default function Swipeable({
                 height: height,
                 top: top ?? "",
                 left: left ?? "",
+                zIndex: zindex ?? 0,
             }}
         >
             <Image
