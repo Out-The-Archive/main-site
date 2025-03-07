@@ -92,13 +92,13 @@ export default function HivesSection() {
             
             </div>
 
-            <div className={`flex flex-row lg:flex-col w-[325px] md:w-[426px] lg:w-[632px] items-center lg:items-end justify-between mt-[30px] font-larken font-light italic text-[18.5px] text-left lg:text-right gap-2 md:gap-0`}>
+            <div className={`flex flex-row lg:flex-col w-[325px] md:w-[426px] lg:w-[632px] lg:-mr-[100px] items-center lg:items-end justify-between mt-[30px] font-larken font-light italic text-[18.5px] text-left gap-2 md:gap-0`}>
                 <p className={``}>
                     a new creative home <br /> for your buzzing passions.
                 </p>
                 <a
                     href=""
-                    className={`lg:mt-[12px] px-[24px] py-[2px] rounded-[32px] bg-[#EEBCBEAB] font-larken italic font-light text-[22px] shadow-lg`}
+                    className={`lg:mt-[12px] px-[24px] py-[2px] rounded-[32px] bg-[#EEBCBEAB] font-larken italic font-light text-[22px] shadow-[0px_5.5px_5.5px_0px_rgba(0,0,0,0.25)]`}
                 >
                     join us
                 </a>
