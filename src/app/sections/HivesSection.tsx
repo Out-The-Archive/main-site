@@ -26,14 +26,14 @@ export default function HivesSection() {
             >
                 hives
             </h3>
-            <div className={`w-full max-w-full flex flex-col items-center justify-center px-4 mx-auto`}>
+            <div className={`w-full max-w-full flex flex-col items-center justify-center px-4 mx-auto drop-shadow-[4.6px_4px_4px_rgba(0,0,0,0.25)]`}>
             <Accordion type="single" collapsible onValueChange={(value) => setOpenItem(value)}
             className={`w-full flex justify-center px-4 `}>
-                <div className={` flex flex-col items-center`}>
+                <div className={`flex flex-col items-center `}>
                 {hiveContent.map((hive, _index) => (
                     <AccordionItem
                         value={`item-${_index}`}
-                        className="w-[325px] md:w-[426px] lg:w-[632px] m-1 mx-auto rounded-[17px] shadow-[4px 0px 4.623px rgba(0, 0, 0, 0.25)]"
+                        className="w-[325px] md:w-[426px] lg:w-[632px] m-1 mx-auto rounded-[17px]"
                     >
                         <AccordionTrigger
                             className={`relative rounded-t-[17px] 
@@ -67,7 +67,7 @@ export default function HivesSection() {
                                     width={50}
                                 />
                         </AccordionTrigger>
-                        <AccordionContent className={`pb-0 shadow-lg`}>
+                        <AccordionContent className={`pb-0`}>
                             <div
                             className={`pb-0 rounded-b-[17px] text-[14px]
                                 ${openItem === `item-${_index}` ? "rounded-t-0" : "rounded-t-[17px]"}
