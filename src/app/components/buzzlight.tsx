@@ -1,19 +1,24 @@
 "use client";
-//import { useEffect, useRef } from "react";
+import { useMemo } from "react";
 
 type BuzzlightProps = {
     videoSrc: string;
+    title: string;
+    desc: string;
 };
 
-export default function BuzzlightComponent({ videoSrc }: BuzzlightProps) {
+export default function BuzzlightComponent({ videoSrc, title, desc }: BuzzlightProps) {
 
-    /*const videoRef = useRef<HTMLVideoElement>(null);
+    // Truncate title if too long
+    const maxTitleChars = 11;
+    const finalTitle = useMemo(() => {
+        return title.length > maxTitleChars ? title.substring(0, 10) + "..." : title;
+    }, [title])
 
-    useEffect(() => {
-        if (videoRef.current) {
-            videoRef.current.load();
-        }
-    }, [videoSrc]);*/
+    const maxDescChars = 16;
+    const finalDesc = useMemo(() => {
+        return desc.length > maxDescChars ? desc.substring(0, 15) + "..." : desc;
+    }, [desc])
 
     return (
         <div
@@ -43,7 +48,6 @@ export default function BuzzlightComponent({ videoSrc }: BuzzlightProps) {
                 muted
                 loop
                 playsInline
-                //autoPlay
                 poster="/jollibee_poster.png"
                 preload="auto"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 animate-fadeIn"
@@ -51,9 +55,9 @@ export default function BuzzlightComponent({ videoSrc }: BuzzlightProps) {
             {/* Hover Overlay */}
             <div className="absolute grid place-items-center inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="relative flex flex-col items-center text-center text-white">
-                    <p className="text-[24px] lg:text-[30px] font-larken opacity-100">Jollibee</p>
+                    <p className="text-[24px] lg:text-[30px] font-larken opacity-100">{finalTitle}</p>
                     <div className="w-24 h-[2px] bg-white my-1"></div>
-                    <p className="text-[13px] lg:text-[20px] font-larken">Mixed Media</p>
+                    <p className="text-[13px] lg:text-[20px] font-larken">{finalDesc}</p>
                 </div>
             </div>
         </div>
