@@ -1,0 +1,52 @@
+"use client";
+
+import { forwardRef } from "react";
+
+type EventCardProps = {
+    eventName: string;
+    date: string;
+    location: string;
+    imgSrc: string;
+    clipRotation: number;
+    cardRotation: number;
+};
+
+const EventCard = forwardRef<HTMLDivElement, EventCardProps>(
+    ({ eventName, date, location, imgSrc, clipRotation, cardRotation }, ref) => {
+
+        return (
+            <div
+                ref={ref}
+                className="size-5 absolute flex justify-center overflow-visible"
+                style={{top: "-10px", left: "-10px"}}
+            >   
+                <div
+                    className="bg-cover size-[65px] lg:size-[102.673px] xl:w-[113.851px] 
+                               absolute overflow-visible z-10"
+                    style={{top: '-10px', backgroundImage: 'url(/upcomingEvents/clothespin.svg)', transform: `rotate(${clipRotation}deg)`}}
+                />
+                <div 
+                    className="w-[177px] aspect-[0.86] lg:w-[280px] xl:w-[310px]
+                                top-[35px] lg:top-[55px]
+                                py-2 px-4 shadow-lg rounded-xl flex flex-col 
+                                border border-[#A49E9B] absolute"
+                    style={{transform: `rotate(${cardRotation}deg)`}}
+                >
+                    <img
+                        src={imgSrc}
+                        className="w-full h-auto rounded-lg mb-2 self-center z-0"
+                    />
+                    <div className="font-aileron">
+                        <p className="italic font-bold text-sm">{eventName}</p>
+                        <p className="font-light text-[12px]">{date}</p>
+                        <p className="font-light text-[12px]">{location}</p>
+                    </div>
+                </div>
+                
+            </div>
+        
+        );
+    }
+);
+
+export default EventCard;
