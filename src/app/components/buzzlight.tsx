@@ -10,9 +10,9 @@ type BuzzlightProps = {
 export default function BuzzlightComponent({ videoSrc, title, desc }: BuzzlightProps) {
 
     // Truncate title if too long
-    const maxTitleChars = 11;
+    const maxTitleChars = 15;
     const finalTitle = useMemo(() => {
-        return title.length > maxTitleChars ? title.substring(0, 10) + "..." : title;
+        return title.length > maxTitleChars ? title.substring(0, 14) + "..." : title;
     }, [title])
 
     const maxDescChars = 16;
@@ -23,7 +23,7 @@ export default function BuzzlightComponent({ videoSrc, title, desc }: BuzzlightP
     return (
         <div
             className="flex-none group relative overflow-hidden
-                w-44 h-40 lg:w-64 lg:h-60"
+                w-44 h-40 sm:w-64 sm:h-60"
             style={{
                 WebkitMaskImage: 'url("/hexagon.svg")',
                 maskImage: 'url("/hexagon.svg")',
@@ -55,9 +55,9 @@ export default function BuzzlightComponent({ videoSrc, title, desc }: BuzzlightP
             {/* Hover Overlay */}
             <div className="absolute grid place-items-center inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="relative flex flex-col items-center text-center text-white">
-                    <p className="text-[24px] lg:text-[30px] font-larken opacity-100">{finalTitle}</p>
-                    <div className="w-24 h-[2px] bg-white my-1"></div>
-                    <p className="text-[13px] lg:text-[20px] font-larken">{finalDesc}</p>
+                    <p className="text-[20px] sm:text-[27px] font-larken opacity-100">{finalTitle}</p>
+                    <div className="w-28 sm:w-36 h-[2px] bg-white my-1"></div>
+                    <p className="text-[13px] sm:text-[18px] font-larken">{finalDesc}</p>
                 </div>
             </div>
         </div>
