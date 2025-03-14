@@ -35,12 +35,12 @@ const EventCard = forwardRef<HTMLDivElement, EventCardProps>(
                 >
                     <img
                         src={imgSrc}
-                        className="w-full h-auto rounded-lg mb-2 self-center z-0"
+                        className="w-11/12 h-auto rounded-lg mb-2 self-center z-0"
                     />
                     <div className="font-aileron">
-                        <p className="italic font-bold text-[13px] lg:text[19px] xl:text[30px]">{eventName}</p>
-                        <p className="font-light text-[12px] lg:text[18px] xl:text[21px]">{date}</p>
-                        <p className="font-light text-[12px] lg:text[18px] xl:text[px]">{location}</p>
+                        <p className="italic font-bold text-[13px] lg:text-[19px] xl:text-[30px]">{eventName}</p>
+                        <p className="font-light text-[12px] lg:text-[18px] xl:text-[21px]">{date}</p>
+                        <p className="font-light text-[12px] lg:text-[18px] xl:text-[px]">{location}</p>
                     </div>
                 </div>
                 

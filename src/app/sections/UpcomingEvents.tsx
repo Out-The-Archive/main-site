@@ -67,7 +67,7 @@ export default function UpcomingEventsSection() {
     <section className="py-12">
     <h3 className="text-2xl mb-6font-aileron text-[32px] lg:text-[36px] font-bold italic pl-[27px] mb-[12px]">upcoming events</h3>
       <div className="max-w-6xl mx-auto px-4">
-        <div className="w-full max-w-[1400px] h-[330px]  lg:h-[485px] mx-auto relative overflow-auto no-scrollbar">
+        <div className="w-full max-w-[1400px] h-[330px]  lg:h-[485px] xl:h-[525px] mx-auto relative overflow-auto no-scrollbar">
             
 
             {/*Renders all events from the events file in public/upcomingEvents*/}
@@ -75,7 +75,6 @@ export default function UpcomingEventsSection() {
 
             {/* The SVG path */}
             <svg
-                className="w-[432px] aspect-auto "
                 xmlns="http://www.w3.org/2000/svg"
                 width="432"
                 height="81"
