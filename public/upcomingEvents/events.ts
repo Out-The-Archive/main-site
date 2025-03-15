@@ -12,8 +12,9 @@ export default [
         date: "12/12",
         location: "Stageroom", 
         imgSrc: "/upcomingEvents/eventImages/Logo.svg"
-        },
+    },
     /*
+    */
     {   
         id: 3,
         eventName: "GBM #1",
@@ -21,5 +22,4 @@ export default [
         location: "DIB 208", 
         imgSrc: "/upcomingEvents/eventImages/event.png"
     },
-    */
 ]
