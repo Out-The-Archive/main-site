@@ -6,6 +6,28 @@ import { Menu, X } from "lucide-react";
 
 export default function MobileMenu() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(true); // Tracks navbar visibility
+    const [lastScrollY, setLastScrollY] = useState(0); // Tracks the last scroll position
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 50) { //check user scroll and if scroll greater than 50px
+                setIsVisible(false);
+            } else {
+                setIsVisible(true); //show navbar on scroll up
+            }
+
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener("scroll", handleScroll); 
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll); 
+        };
+    }, [lastScrollY]);
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
@@ -19,21 +41,23 @@ export default function MobileMenu() {
     }, [isOpen]);
 
     return (
-        <nav className="sticky top-0 z-50 p-4 bg-white ">
+        <nav className={`sticky top-0 z-50 p-4 bg-white transition-transform duration-300" ${
+            isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}>
             <div className="flex justify-between items-center max-w-6xl mx-auto">
-                <img src="/icons/logo.svg" alt="OTA logo" className="h-10" />
+                <img src="/icons/logo.svg" alt="OTA logo" className="h-10 hover:animate-spin" />
 
                 <ul className="hidden md:flex gap-6 font-larken">
-                    <li className="hover:underline">
-                        <a href="#">about</a>
+                    <li className="hover:-rotate-[0.0888rad] hover:[text-shadow:2px_2px_4px_rgba(0,0,0,0.3)]">
+                        <a href="#" >about</a>
                     </li>
-                    <li className="hover:underline">
+                    <li className="hover:-rotate-[0.0888rad] hover:[text-shadow:2px_2px_4px_rgba(0,0,0,0.3)]">
                         <a href="#">join</a>
                     </li>
-                    <li className="hover:underline">
+                    <li className="hover:-rotate-[0.0888rad] hover:[text-shadow:2px_2px_4px_rgba(0,0,0,0.3)]">
                         <a href="#">community</a>
                     </li>
-                    <li className="hover:underline text-[#DF6431]">
+                    <li className="text-white bg-[#DF6431] rounded-sm px-2 hover:-rotate-[0.0888rad] hover:shadow-[4px_4px_10px_rgba(0,0,0,0.3),inset_0px_4px_10px_rgba(0,0,0,0.4)] hover:bg-black">
                         <a href="#">log in</a>
                     </li>
                 </ul>
@@ -46,7 +70,7 @@ export default function MobileMenu() {
             </div>
 
             <div
-                className={`fixed z-50 left-0 h-screen w-full bg-white flex flex-col justify-between transition-all duration-300 ease-in-out ${
+                className={`fixed z-50 left-0 h-screen w-screen bg-white flex flex-col justify-between transition-all duration-300 ease-in-out ${
                     isOpen ? "translate-x-0" : "-translate-x-full"
                 } md:hidden`}
             >
