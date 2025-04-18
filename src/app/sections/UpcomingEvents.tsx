@@ -78,13 +78,18 @@ export default function UpcomingEventsSection() {
 
     const pathRef = useRef<SVGPathElement | null>(null);
 
+    //State to force a rerender on the parent container
+    const [countContainerRerender, setCountContainerRerender] = useState(0);
+
     const getPercentage = (id: number): number => {
         return 19 + (id - 1) * 47
+        //return 30 + (id - 1) * 47
     }
 
     // Move objects along the path based on a percentage of the line
     const moveObjects = (percentage: number): string => {
-        if (pathRef.current && pathLength > 0) {
+        if (pathRef.current) {
+            const pathLength =  Math.floor(pathRef.current.getTotalLength())
             const distance: number = (percentage * pathLength) / 100;
 
             const point: SVGPoint = pathRef.current.getPointAtLength(distance);
@@ -108,14 +113,14 @@ export default function UpcomingEventsSection() {
 
     }, [])
 
-    //Updates the path length
+    //Forces the parent container to rerender
     useEffect(() => {
         if (pathRef.current) {
-            const length = Math.floor(pathRef.current.getTotalLength())
-            setPathLength(length);
+            setCountContainerRerender(prevState => prevState + 1)
         } 
     }, [svgPathProps]);
 
+    //Memorize event cards depending on the countRerender State
     const allEvents = useMemo(() => {
         return events.map((anEvent) => (
             <EventCard
@@ -127,23 +132,23 @@ export default function UpcomingEventsSection() {
                 imgSrc={anEvent.imgSrc}
             />
         ));
-    }, [pathLength])
+    }, [countContainerRerender])
 
     return (
         <section className="py-12">
         <h3 className="text-2xl mb-6font-aileron text-[32px] lg:text-[36px] font-bold italic pl-[27px] mb-[12px]">upcoming events</h3>
 
-            <div className="w-full max-w-[1400px] h-[340px]  lg:h-[500px] xl:h-[565px] mx-auto relative overflow-auto no-scrollbar">
+            <div className="w-full max-w-[1400px] h-[340px]  lg:h-[500px] xl:h-[565px] mx-auto relative overflow-auto no-scrollbar" 
+                key={`${countContainerRerender}`}>
 
                 {/*Renders all events from the events file in public/upcomingEvents*/}
-                {pathLength > 0 ? allEvents : null}
+                {allEvents}
 
                 {/* The SVG path */}
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={svgPathProps.width} height={svgPathProps.height} viewBox={svgPathProps.viewBox}
                     fill="none"
-                    key={currentBreakpoint}
                 >
                     <path
                         ref={pathRef}
